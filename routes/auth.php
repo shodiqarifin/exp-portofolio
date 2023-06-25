@@ -13,4 +13,4 @@ Route::controller(AuthController::class)->group(function () {
     });
 });
 
-Route::redirect('home', 'dashboard');
+Route::redirect('home', '/dashboard');
