@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\HalamanController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +16,8 @@ Route::prefix('/dashboard')->middleware('auth')
         })->name('dashboard');
 
         Route::resource('halaman', HalamanController::class);
+        Route::resource('experience', ExperienceController::class);
+        Route::resource('education', EducationController::class);
     });
 
 

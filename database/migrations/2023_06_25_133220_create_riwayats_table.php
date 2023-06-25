@@ -11,8 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('riwayats', function (Blueprint $table) {
+        Schema::create('riwayat', function (Blueprint $table) {
             $table->id();
+            $table->string('judul');
+            $table->enum('tipe', ['experience', 'education']);
+            $table->date('tgl_mulai');
+            $table->date('tgl_akhir')->nullable();
+            $table->string('info_1')->nullable();
+            $table->string('info_2')->nullable();
+            $table->string('info_3')->nullable();
+            $table->text('isi')->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('riwayats');
+        Schema::dropIfExists('riwayat');
     }
 };
